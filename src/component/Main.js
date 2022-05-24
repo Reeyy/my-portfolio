@@ -10,10 +10,12 @@ import Lottie from "lottie-react";
 import animation from "../assets/svg/96623-bouncing-penguin.json";
 import Intro from "./Intro";
 import { DarkTheme } from "../component/Themes";
+import { motion } from "framer-motion";
+import Typewriter from "typewriter-effect";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
-  background-image: ${(props) => props.theme.backgroundImage};
+  /* background-image: ${(props) => props.theme.backgroundImage}; */
   width: 100vw;
   height: 100vh;
   overflow: hidden;
@@ -141,7 +143,7 @@ const Center = styled.button`
 
 const DarkDiv = styled.div`
   position: absolute;
-  background-image: ${(props) => DarkTheme.backgroundImage};
+  /* background-image: ${(props) => DarkTheme.backgroundImage}; */
   top: 0;
   /* background-size: cover; */
   background-color: #000;
@@ -180,7 +182,18 @@ const Main = () => {
           />
           <span style={{ color: "#4f4f4f" }}> Click Me....(◕‿◕)</span>
         </Center>
-        <Contact href="mailto:reyhanmuhammadj.com">Hire Me....</Contact>
+        <Contact href="mailto:reyhanmuhammadj.com">
+          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+            <Typewriter
+              options={{
+                autoStart: true,
+                loop: true,
+                delay: 100,
+                strings: ["Hire Me...."],
+              }}
+            />
+          </motion.h2>
+        </Contact>
         <Blog to="/blog">
           <h2>BLOG</h2>
         </Blog>
@@ -192,11 +205,11 @@ const Main = () => {
             <h2>About</h2>
           </About>
           <Skills to="/skills">
-            <h2>Skilss</h2>
+            <h2>SKILS</h2>
           </Skills>
         </BottomBar>
       </Container>
-      {+click ? <Intro click={+click} /> : null}
+      {click ? <Intro click={+click} /> : null}
     </MainContainer>
   );
 };
