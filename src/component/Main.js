@@ -61,7 +61,7 @@ const Contact = styled.a`
   font-size: 20px;
 `;
 
-const Blog = styled(Link)`
+const WorkPage = styled(Link)`
   color: ${(props) => props.theme.text};
   position: absolute;
   top: 50%;
@@ -166,12 +166,6 @@ const Main = () => {
         <LogoComponent theme={+click ? "dark" : "light"} />
         <SocialIcons theme={+click ? "dark" : "light"} />
         <Center click={click}>
-          {/* <YinYang
-            onClick={() => handleClick()}
-            width={click ? 120 : 200}
-            height={click ? 120 : 200}
-            fill="currentColor"
-          /> */}
           <Lottie
             onClick={() => handleClick()}
             width={click ? 120 : 200}
@@ -180,32 +174,119 @@ const Main = () => {
             loop="true"
             animationData={animation}
           />
-          <span style={{ color: "#4f4f4f" }}> Click Me....(◕‿◕)</span>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <span style={{ color: "#4f4f4f" }}>
+              <Typewriter
+                options={{
+                  autoStart: true,
+                  loop: true,
+                  delay: 50,
+                  cursor: "",
+                  strings: ["Click Me....(◕‿◕)", "Thank You...(•◡•๑)"],
+                }}
+              />
+            </span>
+          </motion.h2>
         </Center>
         <Contact href="mailto:reyhanmuhammadj.com">
-          <motion.h2 whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.9 }}>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
             <Typewriter
               options={{
                 autoStart: true,
                 loop: true,
                 delay: 100,
+
                 strings: ["Hire Me...."],
               }}
             />
           </motion.h2>
         </Contact>
-        <Blog to="/blog">
-          <h2>BLOG</h2>
-        </Blog>
+        <WorkPage to="/works">
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            WORKS
+          </motion.h2>
+        </WorkPage>
         <Works to="/work" click={+click}>
-          <h2>WORKS</h2>
+          <motion.h2
+            initial={{
+              y: -200,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            animate={{
+              y: 0,
+              transition: { type: "spring", duration: 1.5, delay: 1 },
+            }}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+          >
+            WORKS
+          </motion.h2>
         </Works>
         <BottomBar>
           <About to="/about" click={+click}>
-            <h2>About</h2>
+            <motion.h2
+              initial={{
+                y: -200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              ABOUT
+            </motion.h2>
           </About>
           <Skills to="/skills">
-            <h2>SKILS</h2>
+            <motion.h2
+              initial={{
+                y: -200,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              animate={{
+                y: 0,
+                transition: { type: "spring", duration: 1.5, delay: 1 },
+              }}
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+            >
+              SKilss
+            </motion.h2>
           </Skills>
         </BottomBar>
       </Container>

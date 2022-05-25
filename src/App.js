@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import AboutPage from "./component/AboutPage";
-import BlogPage from "./component/BlogPage";
+import WorkPages from "./component/WorkPages";
 import Main from "./component/Main";
 import MySkillsPage from "./component/MySkillsPage";
 import { DarkTheme, lightTheme } from "./component/Themes";
@@ -16,7 +16,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Main />} />
           <Route path="about" element={<AboutPage />} />
-          <Route path="blog" element={<BlogPage />} />
+          <Route path="works" element={<WorkPages />} />
           <Route path="work" element={<WorkPage />} />
           <Route path="skills" element={<MySkillsPage />} />
         </Routes>

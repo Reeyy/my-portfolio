@@ -1,12 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {
-  Discord,
-  Facebook,
-  Github,
-  Twitter,
-  YouTube,
-} from "../component/AllSvgs";
+import { Discord, Facebook, Github, Twitter } from "../component/AllSvgs";
 import { DarkTheme } from "../component/Themes";
 
 const Icons = styled.div`
