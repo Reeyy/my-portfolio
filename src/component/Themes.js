@@ -1,5 +1,5 @@
-import img from "../assets/Images/bg1.jpg";
-import img2 from "../assets/Images/bg3.jpg";
+import img from "../assets/Images/siang.jpg";
+import img2 from "../assets/Images/malam.jpg";
 export const lightTheme = {
   body: "#edf2f4",
   text: "#000000",

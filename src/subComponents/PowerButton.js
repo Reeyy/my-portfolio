@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { PowerBtn } from "../component/AllSvgs";
+import Gohome from "../component/Gohome";
 
 const Power = styled.button`
   position: fixed;
@@ -34,7 +35,7 @@ function PowerButton() {
   return (
     <Power>
       <NavLink to="/">
-        <PowerBtn widt={30} height={30} fill="currentColor" />
+        <Gohome />
       </NavLink>
     </Power>
   );

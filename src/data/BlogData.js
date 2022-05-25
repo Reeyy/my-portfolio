@@ -1,12 +1,12 @@
 export const Works = [
   {
     id: 1,
-    name: "Build Website with ReactJS, Styled-components and GSAP for Scrolling Animations",
-    tags: ["react", "gsap", "styled-components"],
-    date: "13 May, 2021",
+    name: "U Mart  E commerce Prototype Design ",
+    tags: ["E commerce", "Figma", "Prototype ", "Design "],
+    date: "13 desember, 2021",
     imgSrc:
-      "https://cdn.discordapp.com/attachments/972471395428761610/978745962078044180/s.png",
-    link: "https://dev.to/codebucks/build-website-with-reactjs-styled-components-and-gsap-for-scrolling-animations-2f10",
+      "https://drive.google.com/file/d/1-RpGTsq5p9KimCV-HoSXeVepKZnHMoM8/view?usp=sharing",
+    link: "https://www.figma.com/file/IyA0em6XL6wCx4k5tL4KkS/Umart-Main-User",
   },
   {
     id: 2,

@@ -4,12 +4,13 @@ import { DarkTheme } from "./Themes";
 import LogoComponent from "../subComponents/LogoComponent";
 import SocialIcons from "../subComponents/SocialIcons";
 import PowerButton from "../subComponents/PowerButton";
-import astronaut from "../assets/Images/spaceman.png";
+import Me from "../assets/Images/Saly-22.svg";
 import Particle from "./Particle";
-import imgsnow from "../assets/Images/bgwinter.jpg";
+import imgsnow from "../assets/Images/malam.jpg";
 
 const Box = styled.div`
   background-color: ${(props) => props.theme.body};
+  background-size: cover;
   background-image: url(${imgsnow});
   width: 100vw;
   z-index: 3;
@@ -66,17 +67,20 @@ const AboutPage = () => {
         <Particle />
 
         <Spaceman>
-          <img src={astronaut} alt="spaceman" />
+          <img src={Me} alt="spaceman" />
         </Spaceman>
         <Main>
-          I'm a front-end developer located in India. I love to create simple
-          yet beautiful websites with great user experience.
+          I'm a Junior frontend Developer Located in bogor indonesia.
           <br /> <br />
-          I'm interested in the whole frontend stack Like trying new things and
-          building great projects. I'm an independent freelancer and blogger. I
-          love to write blogs and read books.
-          <br /> <br />I believe everything is an Art when you put your
-          consciousness in it. You can connect with me via social links.
+          I'm interested in the whole frontend Like trying new things and
+          building great projects. I like to learn new technology and currently
+          I learning React JS, and Tailwind CSS. I am eager to learn and work
+          with various departments in the company, and I am a hardworking
+          student, Good at teamwork and communication, self-motivated, and Cope
+          well under pressure I can improve my knowledge and skill for
+          furthering the company and always plan ahead so I can make sure I can
+          manage my time well. I
+          <br /> <br />
         </Main>
       </Box>
     </ThemeProvider>

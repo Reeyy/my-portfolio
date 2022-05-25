@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import Me from "../assets/Images/VA-LOGO.png";
 import { motion } from "framer-motion";
+import Lottie from "lottie-react";
+import animation from "../assets/svg/97305-face-with-rolling-eyes-emoji.json";
+import animation2 from "../assets/svg/28086-wow-emoji.json";
+import Particle from "./Particle";
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -32,12 +36,13 @@ const Box = styled(motion.div)`
   border-left: 2px solid ${(props) => props.theme.body};
   border-right: 2px solid ${(props) => props.theme.text};
 
-  z-index: 1;
+  z-index: 5;
 `;
 const SubBox = styled(motion.div)`
   width: 50%;
   position: relative;
   display: flex;
+  z-index: 3;
 
   .pic {
     position: absolute;
@@ -51,11 +56,17 @@ const SubBox = styled(motion.div)`
 const Text = styled.div`
   font-size: calc(1em + 1.5vw);
   color: ${(props) => props.theme.body};
+  font-weight: small;
   padding: 2rem;
   cursor: pointer;
+  z-index: 3;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+
+  & > *:first-child {
+    color: #f8f9fa;
+  }
 
   & > *:last-child {
     color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
@@ -66,37 +77,44 @@ const Text = styled.div`
 
 const Intro = () => {
   return (
-    <Box
-      initial={{ height: 0 }}
-      animate={{ height: "55vh" }}
-      transition={{
-        type: "spring",
-        duration: 2,
-        delay: 1,
-      }}
-    >
-      <SubBox>
-        <Text>
-          <h1>Hi,😳</h1>
-          <h3>My Name Is Reyhan M</h3>
-          <h6> I like to design and code simple and interactive websites</h6>
-        </Text>
-      </SubBox>
-      <SubBox>
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{
-            duration: 3,
-            delay: 1,
-          }}
-        >
-          <div>
-            <img className="pic" src={Me} alt="Profile Pic"></img>
-          </div>
-        </motion.div>
-      </SubBox>
-    </Box>
+    <>
+      <Particle />
+      <Box
+        initial={{ height: 0 }}
+        animate={{ height: "55vh" }}
+        transition={{
+          type: "spring",
+          duration: 2,
+          delay: 1,
+        }}
+      >
+        <SubBox>
+          <Text>
+            <h1>HI </h1>
+            <h3>My Name Is Reyhan M</h3>
+            <h6> I like to design and code simple and interactive websites</h6>
+          </Text>
+        </SubBox>
+        <SubBox>
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{
+              duration: 3,
+              delay: 1,
+            }}
+          >
+            <div>
+              <Lottie
+                fill="currentColor"
+                loop="true"
+                animationData={animation}
+              />
+            </div>
+          </motion.div>
+        </SubBox>
+      </Box>
+    </>
   );
 };
 

@@ -12,15 +12,17 @@ import Intro from "./Intro";
 import { DarkTheme } from "../component/Themes";
 import { motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
+import Dock from "./Dock";
+import Particle from "./Particle";
 
 const MainContainer = styled.div`
   background: ${(props) => props.theme.body};
-  /* background-image: ${(props) => props.theme.backgroundImage}; */
+  background-image: ${(props) => props.theme.backgroundImage};
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  /* background-size: cover; */
-
+  background-size: cover;
+  z-index: 3;
   position: relative;
   h2,
   h3,
@@ -49,37 +51,27 @@ const Container = styled.div`
 
 const Contact = styled.a`
   display: inline-block;
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
   font-family: "Poppins";
   position: fixed;
   right: 2rem;
   top: 2.9rem;
-  z-index: 1;
+  z-index: 3;
   letter-spacing: 3px;
   font-weight: normal;
   text-decoration: none;
   font-size: 20px;
 `;
 
-const WorkPage = styled(Link)`
-  color: ${(props) => props.theme.text};
-  position: absolute;
-  top: 50%;
-  right: calc(1rem + 2vw);
-  transform: rotate(90deg) translate(-50%, -50%);
-  text-decoration: none;
-  z-index: 1;
-`;
-
-const Works = styled(Link)`
-  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
-  position: absolute;
-  top: 50%;
-  left: calc(1rem + 2vw);
-  transform: translate(-50%, -50%) rotate(-90deg);
-  text-decoration: none;
-  z-index: 1;
-`;
+// const Works = styled(Link)`
+//   color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
+//   position: absolute;
+//   top: 50%;
+//   left: calc(1rem + 2vw);
+//   transform: translate(-50%, -50%) rotate(-90deg);
+//   text-decoration: none;
+//   z-index: 1;
+// `;
 
 const BottomBar = styled.div`
   position: absolute;
@@ -87,21 +79,9 @@ const BottomBar = styled.div`
   left: 0;
   right: 0;
   width: 100%;
-
+  z-index: 3;
   display: flex;
   justify-content: space-evenly;
-`;
-
-const About = styled(Link)`
-  color: ${(props) => (props.click ? props.theme.body : props.theme.text)};
-  text-decoration: none;
-  z-index: 1;
-`;
-
-const Skills = styled(Link)`
-  color: ${(props) => props.theme.text};
-  text-decoration: none;
-  z-index: 1;
 `;
 
 const bounce = keyframes`
@@ -123,6 +103,7 @@ const Center = styled.button`
   left: ${(props) => (props.click ? "92%" : "50%")};
   transform: translate(-50%, -50%);
   border: none;
+  z-index: 3;
   outline: none;
   background-color: transparent;
   cursor: pointer;
@@ -143,15 +124,17 @@ const Center = styled.button`
 
 const DarkDiv = styled.div`
   position: absolute;
-  /* background-image: ${(props) => DarkTheme.backgroundImage}; */
+  background-image: ${(props) => DarkTheme.backgroundImage};
   top: 0;
-  /* background-size: cover; */
+  background-size: cover;
   background-color: #000;
   bottom: 0;
+
+  overflow: hidden;
   right: 50%;
-  width: ${(props) => (props.click ? "50%" : "0%")};
-  height: ${(props) => (props.click ? "100%" : "0%")};
-  z-index: 1;
+  width: ${(props) => (props.click ? "50vw" : "0%")};
+  height: ${(props) => (props.click ? "135vh" : "0%")};
+  z-index: 3;
   transition: height 0.5s ease, width 1s ease 0.5s;
 `;
 
@@ -160,6 +143,7 @@ const Main = () => {
   const handleClick = () => setClick(!click);
   return (
     <MainContainer>
+      <Particle />
       <DarkDiv click={click} />
       <Container>
         <PowerButton></PowerButton>
@@ -217,77 +201,14 @@ const Main = () => {
                 autoStart: true,
                 loop: true,
                 delay: 100,
-
-                strings: ["Hire Me...."],
+                strings: ["Get in touch"],
               }}
             />
           </motion.h2>
         </Contact>
-        <WorkPage to="/works">
-          <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            WORKS
-          </motion.h2>
-        </WorkPage>
-        <Works to="/work" click={+click}>
-          <motion.h2
-            initial={{
-              y: -200,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            animate={{
-              y: 0,
-              transition: { type: "spring", duration: 1.5, delay: 1 },
-            }}
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            WORKS
-          </motion.h2>
-        </Works>
+
         <BottomBar>
-          <About to="/about" click={+click}>
-            <motion.h2
-              initial={{
-                y: -200,
-                transition: { type: "spring", duration: 1.5, delay: 1 },
-              }}
-              animate={{
-                y: 0,
-                transition: { type: "spring", duration: 1.5, delay: 1 },
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              ABOUT
-            </motion.h2>
-          </About>
-          <Skills to="/skills">
-            <motion.h2
-              initial={{
-                y: -200,
-                transition: { type: "spring", duration: 1.5, delay: 1 },
-              }}
-              animate={{
-                y: 0,
-                transition: { type: "spring", duration: 1.5, delay: 1 },
-              }}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              SKilss
-            </motion.h2>
-          </Skills>
+          <Dock />
         </BottomBar>
       </Container>
       {click ? <Intro click={+click} /> : null}
