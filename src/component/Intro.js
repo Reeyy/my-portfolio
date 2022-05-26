@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import Me from "../assets/Images/VA-LOGO.png";
+import styled, { keyframes } from "styled-components";
+
 import { motion } from "framer-motion";
 import Lottie from "lottie-react";
 import animation from "../assets/svg/97305-face-with-rolling-eyes-emoji.json";
@@ -11,7 +11,9 @@ const Box = styled(motion.div)`
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
+  background: hsla(0, 0%, 100%, 0.55);
+  backdrop-filter: blur(30px);
+  box-shadow: 0 0 1rem 0 rgba(0, 0, 0, 0.2);
   width: 55vw;
   height: 55vh;
 
@@ -20,21 +22,21 @@ const Box = styled(motion.div)`
   background-size: 100% 2px;
   background: linear-gradient(
         to right,
-        ${(props) => props.theme.body} 50%,
-        ${(props) => props.theme.text} 50%
+        hsla(0, 0%, 100%, 0.55) 50%,
+        hsla(0, 0%, 100%, 0.55) 50%
       )
       bottom,
     linear-gradient(
         to right,
-        ${(props) => props.theme.body} 50%,
-        ${(props) => props.theme.text} 50%
+        hsla(0, 0%, 100%, 0.55) 50%,
+        hsla(0, 0%, 100%, 0.55) 50%
       )
       top;
   background-repeat: no-repeat;
   background-size: 100% 2px;
 
-  border-left: 2px solid ${(props) => props.theme.body};
-  border-right: 2px solid ${(props) => props.theme.text};
+  border-left: 2px solid hsla(0, 0%, 100%, 0.55);
+  border-right: 2px solid hsla(0, 0%, 100%, 0.55);
 
   z-index: 5;
 `;
@@ -69,16 +71,42 @@ const Text = styled.div`
   }
 
   & > *:last-child {
-    color: ${(props) => `rgba(${props.theme.bodyRgba},0.6)`};
+    color: #f8f9fa;
     font-size: calc(0.5rem + 1.5vw);
-    font-weight: 300;
+    font-weight: 400;
+  }
+
+  @media (max-width: 50em) {
+    flex-direction: none;
+    padding: 5rem;
+
+    & > :first-child {
+    }
+  }
+`;
+
+const bounce = keyframes`
+  20% { transform: rotate(-10deg) }
+  40%, 60% { transform: rotate(12deg)  }
+  50% { transform: rotate(-5deg)  }
+  70% { transform: rotate(0deg) }
+  100% { transform: rotate(1deg) }
+`;
+
+const Animasi = styled.div`
+  @media (max-width: 50em) {
+    & > :first-child {
+      display: none;
+    }
+  }
+  & > :first-child {
+    animation: ${bounce} 10s linear 3s infinite;
   }
 `;
 
 const Intro = () => {
   return (
     <>
-      <Particle />
       <Box
         initial={{ height: 0 }}
         animate={{ height: "55vh" }}
@@ -104,13 +132,13 @@ const Intro = () => {
               delay: 1,
             }}
           >
-            <div>
+            <Animasi>
               <Lottie
                 fill="currentColor"
                 loop="true"
                 animationData={animation}
               />
-            </div>
+            </Animasi>
           </motion.div>
         </SubBox>
       </Box>
