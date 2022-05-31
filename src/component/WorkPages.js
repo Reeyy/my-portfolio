@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import BgImg from "../assets/Images/siang.jpg";
-import Particle from "./Particle";
+import Particle2 from "./Particle2";
 import { motion } from "framer-motion";
 import LogoComponent from "../subComponents/LogoComponent";
 import PowerButton from "../subComponents/PowerButton";
@@ -71,7 +71,7 @@ const BlogPage = (props) => {
     >
       <Container>
         <Dock />
-        <Particle />
+        <Particle2 />
         <LogoComponent />
 
         <PowerButton />

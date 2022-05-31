@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { Rocket, YinYang } from "./AllSvgs";
 import { keyframes } from "styled-components";
 import Lottie from "lottie-react";
-import animation from "../assets/svg/96623-bouncing-penguin.json";
+import animation from "../assets/svg/56288-emoji-32.json";
 import Intro from "./Intro";
 import { DarkTheme } from "../component/Themes";
 import { motion } from "framer-motion";
@@ -55,6 +55,7 @@ const Contact = styled.a`
   font-family: "Poppins";
   position: fixed;
   right: 2rem;
+
   top: 2.9rem;
   z-index: 3;
   letter-spacing: 3px;
@@ -85,11 +86,11 @@ const BottomBar = styled.div`
 `;
 
 const bounce = keyframes`
-  30% { transform: scale(1.2); }
-  40%, 60% { transform: rotate(-20deg) scale(1.2); }
-  50% { transform: rotate(20deg) scale(1.2); }
-  70% { transform: rotate(0deg) scale(1.2); }
-  100% { transform: scale(1); }
+  20% { transform: rotate(-20deg) }
+  40%, 60% { transform: rotate(10deg)  }
+  50% { transform: rotate(-10deg)  }
+  70% { transform: rotate(10deg) }
+  100% { transform: rotate(-5deg) }
 `;
 
 const zoomHover = keyframes`
@@ -113,6 +114,18 @@ const Center = styled.button`
   justify-content: center;
   align-items: center;
   transition: all 1s ease;
+  @media (max-width: 1900px) {
+    & > :first-child {
+      width: auto;
+      height: 180px;
+    }
+  }
+  @media (max-width: 50em) {
+    & > :first-child {
+      width: auto;
+      height: 100px;
+    }
+  }
   & > :first-child {
     animation: ${bounce} 10s linear 3s infinite;
   }
@@ -129,7 +142,6 @@ const DarkDiv = styled.div`
   background-size: cover;
   background-color: #000;
   bottom: 0;
-
   overflow: hidden;
   right: 50%;
   width: ${(props) => (props.click ? "50vw" : "0%")};
@@ -137,10 +149,10 @@ const DarkDiv = styled.div`
   z-index: 3;
   transition: height 0.5s ease, width 1s ease 0.5s;
 `;
-
 const Main = () => {
   const [click, setClick] = useState(false);
   const handleClick = () => setClick(!click);
+
   return (
     <MainContainer>
       <Particle />
@@ -170,7 +182,7 @@ const Main = () => {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           >
-            <span style={{ color: "#4f4f4f" }}>
+            <span onClick={() => handleClick()} style={{ color: "#4f4f4f" }}>
               <Typewriter
                 options={{
                   autoStart: true,
@@ -183,7 +195,7 @@ const Main = () => {
             </span>
           </motion.h2>
         </Center>
-        <Contact href="mailto:reyhanmuhammadj.com">
+        <Contact href="mailto:reyhanmuhammadj.com" style={{ color: "#f8f9fa" }}>
           <motion.h2
             initial={{
               y: -200,
@@ -211,7 +223,7 @@ const Main = () => {
           <Dock />
         </BottomBar>
       </Container>
-      {click ? <Intro click={+click} /> : null}
+      {click ? <Intro click={+click} goback={handleClick} /> : null}
     </MainContainer>
   );
 };

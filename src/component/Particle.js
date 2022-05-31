@@ -24,7 +24,7 @@ function Particle() {
       options={{
         fullScreen: {
           enable: true,
-          zIndex: -1,
+          zIndex: 5,
         },
         particles: {
           number: {
@@ -63,7 +63,7 @@ function Particle() {
             },
           },
           size: {
-            value: 4,
+            value: 5,
             random: true,
             anim: {
               enable: false,

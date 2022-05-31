@@ -21,7 +21,7 @@ const Box = styled(motion.li)`
   transition: all 0.2s ease;
 
   &:hover {
-    background-color: ${(props) => props.theme.body};
+    background-color: #240046;
     color: ${(props) => props.theme.text};
     border: 1px solid ${(props) => props.theme.text};
   }
@@ -66,7 +66,7 @@ const Footer = styled.footer`
 `;
 
 const Link = styled.a`
-  background-color: ${(props) => props.theme.body};
+  background-color: #240046;
   color: ${(props) => props.theme.text};
   text-decoration: none;
   padding: 0.5rem calc(2rem + 2vw);

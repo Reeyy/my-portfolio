@@ -5,6 +5,7 @@ import Lottie from "lottie-react";
 import animation from "../assets/svg/97305-face-with-rolling-eyes-emoji.json";
 import animation2 from "../assets/svg/28086-wow-emoji.json";
 import Particle from "./Particle";
+import { useState } from "react";
 
 const Box = styled(motion.div)`
   position: absolute;
@@ -94,6 +95,8 @@ const bounce = keyframes`
 `;
 
 const Animasi = styled.div`
+  cursor: pointer;
+
   @media (max-width: 50em) {
     & > :first-child {
       display: none;
@@ -104,7 +107,7 @@ const Animasi = styled.div`
   }
 `;
 
-const Intro = () => {
+const Intro = ({ goback }) => {
   return (
     <>
       <Box
@@ -118,8 +121,8 @@ const Intro = () => {
       >
         <SubBox>
           <Text>
-            <h1>HI </h1>
-            <h3>My Name Is Reyhan M</h3>
+            <h1>HI....</h1>
+            <h3>Reyhan M is here </h3>
             <h6> I like to design and code simple and interactive websites</h6>
           </Text>
         </SubBox>
@@ -132,7 +135,7 @@ const Intro = () => {
               delay: 1,
             }}
           >
-            <Animasi>
+            <Animasi onClick={goback}>
               <Lottie
                 fill="currentColor"
                 loop="true"

@@ -1,12 +1,12 @@
 #dock-container li {
   list-style-type: none;
-  z-index: 5;
+  z-index: 6;
   display: inline-block;
   position: relative;
 }
 #dock-container li img {
   width: 64px;
-  z-index: 5;
+  z-index: 6;
   height: 64px;
   -webkit-box-reflect: below 2px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(0.7, transparent), to(rgba(255, 255, 255, 0.5)));
   -webkit-transition: all 0.3s;
@@ -14,13 +14,13 @@
 }
 #dock-container li:hover img {
   -webkit-transform: scale(2);
-  z-index: 5;
+  z-index: 6;
   margin: 0 2em;
 }
 #dock-container li:hover + li img,
 #dock-container li.prev img {
   -webkit-transform: scale(1.5);
-  z-index: 5;
+  z-index: 6;
   margin: 0 1.5em;
 }
 
@@ -29,14 +29,14 @@
   position: absolute;
   bottom: 140px;
   left: 0;
-  z-index: 5;
+  z-index: 6;
   width: 100%;
   background-color: rgba(0, 0, 0, 0.75);
   padding: 4px 0;
   border-radius: 12px;
 }
 #dock-container li:hover span {
-  z-index: 5;
+  z-index: 6;
   display: block;
   color: #fff;
 }

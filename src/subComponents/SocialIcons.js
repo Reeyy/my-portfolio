@@ -29,7 +29,7 @@ const SocialIcons = (props) => {
     <Icons>
       <div>
         <a
-          href="https://web.whatsapp.com/"
+          href="https://github.com/Reeyy"
           style={{ color: "inherit" }}
           target="_blank"
           rel="noreferrer"
@@ -41,9 +41,9 @@ const SocialIcons = (props) => {
           />
         </a>
       </div>
-      <div>
+      {/* <div>
         <a
-          href="https://web.whatsapp.com/"
+          href="https://wa.me/+6287888243662"
           style={{ color: "inherit" }}
           target="_blank"
           rel="noreferrer"
@@ -54,8 +54,8 @@ const SocialIcons = (props) => {
             fill={props.theme === "dark" ? "#f8f9fa" : "#f8f9fa"}
           />
         </a>
-      </div>
-      <div>
+      </div> */}
+      {/* <div>
         <a
           href="https://web.whatsapp.com/"
           style={{ color: "inherit" }}
@@ -68,7 +68,7 @@ const SocialIcons = (props) => {
             fill={props.theme === "dark" ? "#f8f9fa" : "#f8f9fa"}
           />
         </a>
-      </div>
+      </div> */}
       <div>
         <a
           href="https://discord.com/users/304995839045140481"
